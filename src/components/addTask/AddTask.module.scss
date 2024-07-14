@@ -1,0 +1,14 @@
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+.input {
+  width: 270px;
+  border-radius: 25px;
+}
+.button {
+  background-color: #77dde7;
+  border-radius: 25px;
+  width: 120px;
+  height: 40px;
+}
