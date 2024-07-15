@@ -23,8 +23,11 @@
   text-decoration: line-through;
   color: #ccc;
 }
-.dropDown {
-  display: flex;
+.openMenu {
   cursor: pointer;
-  align-items: center;
+
+  transform: rotate(90deg);
+}
+.dropMenuItem {
+  padding: 7px 15px;
 }

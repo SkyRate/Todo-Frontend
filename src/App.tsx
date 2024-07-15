@@ -61,6 +61,22 @@ function App() {
     }
   };
 
+  const editTodo = async (id: string, text: string) => {
+    try {
+      const response: AxiosResponse<Todo> = await axios.put(
+        `http://localhost:4200/todo/${id}`,
+        { text }
+      );
+      const updatedTodos = todos.map((todo) =>
+        todo._id === id ? { ...todo, text: response.data.text } : todo
+      );
+      setTodos(updatedTodos);
+    } catch (error) {
+      console.error("Ошибка при редактировании задачи:", error);
+      message.error("Не удалось редактировать задачу. Попробуйте снова.");
+    }
+  };
+
   const deleteTodo = async (id: string) => {
     try {
       await axios.delete(`http://localhost:4200/todo/${id}`);
@@ -91,6 +107,7 @@ function App() {
           isLoading={isLoading}
           toggleTodo={toggleTodo}
           deleteTodo={deleteTodo}
+          editTodo={editTodo}
         />
         <FooterBar count={todos.length} deleteAllTodos={deleteAllTodos} />
       </div>

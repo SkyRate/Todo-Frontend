@@ -8,6 +8,7 @@ export type TaskAreaProps = {
   isLoading: boolean;
   toggleTodo: (id: string, completed: boolean) => void;
   deleteTodo: (id: string) => void;
+  editTodo: (id: string, text: string) => void;
 };
 export type FooterBarProps = {
   count: number;
@@ -15,5 +16,5 @@ export type FooterBarProps = {
 };
 
 export type AddTaskProps = {
-   addTodo: (todoText: string) => void;
- };
+  addTodo: (todoText: string) => void;
+};
